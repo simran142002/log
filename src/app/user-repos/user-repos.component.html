@@ -1,0 +1,26 @@
+<!-- user-repos.component.html -->
+<div>
+    <h2>Github Repositories</h2>
+    <div>
+      <input [(ngModel)]="username" placeholder="Enter Github Username">
+      <button (click)="getUserRepos()">Get Repositories</button>
+    </div>
+    <div *ngIf="repositories.length > 0">
+      <h3>Repositories:</h3>
+      <ul>
+        <li *ngFor="let repo of repositories">
+          <strong>{{ repo.name }}</strong> - Languages: {{ repo.languages.join(', ') }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="chartData.length > 0">
+      <ngx-charts-pie-chart
+      [results]="chartData"
+      [view]="[400, 300]"
+      [labels]="true" 
+      [explodeSlices]="false"
+      >
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+  
