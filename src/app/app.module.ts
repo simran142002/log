@@ -7,10 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { UserReposComponent } from './user-repos/user-repos.component';
 import { GithubApiService } from './github-api.service';
+import { LogIngestionComponent } from './log-ingestion/log-ingestion.component';
+import { LogSearchComponent } from './log-search/log-search.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserReposComponent
+    UserReposComponent,
+    LogIngestionComponent,
+    LogSearchComponent
   ],
   imports: [
     BrowserModule,

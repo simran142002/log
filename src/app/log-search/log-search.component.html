@@ -1,0 +1,84 @@
+<!-- log-search.component.html -->
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="level">Level:</label>
+      <input id="level" [(ngModel)]="query.level" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="message">Message:</label>
+      <input id="message" [(ngModel)]="query.message" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="resourceId">Resource Id:</label>
+      <input id="resourceId" [(ngModel)]="query.resourceId" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="timestamp">Timestamp:</label>
+      <input id="timestamp" type="datetime-local" [(ngModel)]="query.timestamp" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="traceId">Trace Id:</label>
+      <input id="traceId" [(ngModel)]="query.traceId" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="spanId">Span Id:</label>
+      <input id="spanId" [(ngModel)]="query.spanId" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="commit">Commit:</label>
+      <input id="commit" [(ngModel)]="query.commit" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button (click)="searchLogs()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="row mt-4" *ngIf="searchResults">
+    <div class="col-md-12">
+      <div class="card" *ngFor="let log of searchResults">
+        <div class="card-body">
+          <h5 class="card-title">{{ log.level }}</h5>
+          <p class="card-text">{{ log.message }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
